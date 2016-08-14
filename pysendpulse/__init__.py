@@ -1,4 +1,4 @@
-from pysendpulse import *
+import pysendpulse
 
 __author__ = 'Maksym Ustymenko'
 __author_email__ = 'tech@sendpulse.com'

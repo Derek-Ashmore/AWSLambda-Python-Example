@@ -20,9 +20,13 @@ def my_handler(event, context):
             {'name': event['toName'], 'email': event['toEmail']}
         ]
     }
+    success=True
     
     try:
         SPApiProxy.smtp_send_mail(email)
     except RuntimeError as err:
+        success=False
         print("Runtime error: event={0}, context={1}, error={2}".format(event.json(), context.json(), err))
-        raise;
+        
+        
+    return success;
