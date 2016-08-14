@@ -1,10 +1,17 @@
 """ Email sending Lambda that will email out a message passed to it
 """
 
-from pysendpulse import PySendPulse
+#from .pysendpulse import *
+import pysendpulse
 import logging
+
+def start(a, b):
+    """
+    This doesn't matter, but Django's handler requires it.
+    """
+    return
     
-def my_handler(event, context):
+def lambda_handler(event, context):
     # SendPulse account information and setup
     REST_API_ID = event['apiId']
     REST_API_SECRET = event['apiSecret']

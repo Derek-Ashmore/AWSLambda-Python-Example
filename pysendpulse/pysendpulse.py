@@ -7,7 +7,7 @@ Documentation:
 """
 
 import os
-import memcache
+#import memcache
 import requests
 import logging
 import base64
