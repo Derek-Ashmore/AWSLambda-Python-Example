@@ -65,6 +65,7 @@ class PySendPulse:
             logging.warn("Try to use 'FILE' instead.")
             self.__storage_type = 'FILE'
         logging.debug("Try to get security token from '{}'".format(self.__storage_type, ))
+
         if self.__storage_type == "MEMCACHED":
             mc = memcache.Client(['127.0.0.1:11211'])
             self.__token = mc.get(self.__token_hash_name)
@@ -97,6 +98,7 @@ class PySendPulse:
         self.__refresh_token = 0
         self.__token = response.json()['access_token']
         logging.debug("Got: '{}'".format(self.__token, ))
+
         if self.__storage_type == "MEMCACHED":
             logging.debug("Try to set token '{}' into 'MEMCACHED'".format(self.__token, ))
             mc = memcache.Client(['127.0.0.1:11211'])
