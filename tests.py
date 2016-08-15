@@ -24,6 +24,14 @@ class MyTest(unittest.TestCase):
             },
             "method": "POST",
             "params": {
+                "apiId": "foo",
+                "apiapiSecretId": "foo",
+                "subject": "foo",
+                "message": "foo",
+                "fromName": "foo",
+                "fromEmail": "foo",
+                "toName": "foo",
+                "toEmail": "foo"
             },
             "command": "emailContact",
             "query": {
@@ -40,7 +48,7 @@ class MyTest(unittest.TestCase):
         
         context=None
         
-        self.assertEquals(True, lambda_handler(event, context))
+        self.assertEquals(True, emailLambda.lambda_handler(event, context))
         
 if __name__ == '__main__':
     unittest.main()
