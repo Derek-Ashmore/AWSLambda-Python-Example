@@ -1,3 +1,6 @@
+# Personal git ignore additions
+sendpulseKeys.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,9 +1,14 @@
 #from .emailLambda import *
 import emailLambda
 import unittest
+import json
 
 class MyTest(unittest.TestCase):
     def test(self):
+        keyInfo = None
+        with open('sendpulseKeys.json') as json_data:
+            keyInfo = json.load(json_data)
+    
         event = {
             "body": "",
             "headers": {
@@ -24,29 +29,21 @@ class MyTest(unittest.TestCase):
             },
             "method": "POST",
             "params": {
-                "apiId": "foo",
-                "apiapiSecretId": "foo",
-                "subject": "foo",
-                "message": "foo",
-                "fromName": "foo",
-                "fromEmail": "foo",
-                "toName": "foo",
-                "toEmail": "foo"
+                "apiId": keyInfo.get('apiId'),
+                "apiSecretId": keyInfo.get('apiSecretId'),
+                "subject": "Test subject",
+                "message": "This is a test message - please ignore",
+                "fromName": "Throc Morton",
+                "fromEmail": "derek.ashmore@dvtconsulting.com",
+                "toName": "Break The Monolith",
+                "toEmail": "sales@breakthemonolith.guru"
             },
             "command": "emailContact",
-            "query": {
-                "apiId": "foo",
-                "apiapiSecretId": "foo",
-                "subject": "foo",
-                "message": "foo",
-                "fromName": "foo",
-                "fromEmail": "foo",
-                "toName": "foo",
-                "toEmail": "foo"
-            }
         }
         
-        context=None
+        context={
+            "stubbed" : "out"
+        }
         
         self.assertEquals(True, emailLambda.lambda_handler(event, context))
         
