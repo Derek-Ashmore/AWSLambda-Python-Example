@@ -7,7 +7,7 @@ This product is designed to manage the sending of an email for a web site "conta
 * Python 2.7 or above (may work in other versions, but untested)
 
 ## Inputs
-This application accepts a JSON input.  An example follows below. The Json document can contain more, but must contain at least these three fields.
+This application accepts a JSON input.  An example follows below. The Json document can contain more, but must contain at least these fields.
 
 ```json
 {
