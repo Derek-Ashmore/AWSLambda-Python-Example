@@ -1,10 +1,12 @@
-#from .emailLambda import *
+
 import emailLambda
 import unittest
 import json
 
 class MyTest(unittest.TestCase):
     def test(self):
+        
+        # Note that you need to provide a sendpulseKeys.json file for this test to work. See README.md
         keyInfo = None
         with open('sendpulseKeys.json') as json_data:
             keyInfo = json.load(json_data)
