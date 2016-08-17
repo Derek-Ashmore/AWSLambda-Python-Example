@@ -5,6 +5,7 @@ This product is designed to manage the sending of an email for a web site "conta
 ## System Requirements
 * SendPulse.com account capable of sending SMTP email.  You'll need the ApiId and ApiSecretKey.
 * Python 2.7 or above (may work in other versions, but untested)
+* You must include Python dependencies from python-package-requirements.txt (e.g. pip -r python-package-requirements.txt -t yourDeployZipBaseDir)
 
 ## Inputs
 This application accepts a JSON input.  An example follows below. The Json document can contain more, but must contain at least these fields.
