@@ -8,10 +8,10 @@ Documentation:
 
 import os
 #import memcache
-import requests
 import logging
 import base64
 from hashlib import md5
+import requests
 
 try:
     import simplejson as json
