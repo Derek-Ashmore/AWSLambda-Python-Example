@@ -22,7 +22,7 @@ echo "copying python code"
 cp *.py $BUILD_DIR
 echo "unpacking dependent packages"
 mkdir $BUILD_DIR/lib
-unzip lambda-binary-dependencies.zip -d $BUILD_DIR/lib
+unzip lambda-binary-dependencies.zip -d $BUILD_DIR
 echo "Zipping deployment"
 CURRENT_DIR=`pwd`
 cd $BUILD_DIR
