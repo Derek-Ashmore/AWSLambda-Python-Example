@@ -24,4 +24,7 @@ echo "unpacking dependent packages"
 mkdir $BUILD_DIR/lib
 unzip lambda-binary-dependencies.zip -d $BUILD_DIR/lib
 echo "Zipping deployment"
-zip -r $BUILD_DIR/AWSLambda-Email.zip $BUILD_DIR/*
+CURRENT_DIR=`pwd`
+cd $BUILD_DIR
+zip -r AWSLambda-Email.zip *
+cd $CURRENT_DIR
